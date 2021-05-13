@@ -17,6 +17,12 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
+  <gazebo reference="front_caster">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <material>Gazebo/RedBright</material>
+  </gazebo>
+
 
   <link name="robot_footprint"></link>
 
@@ -53,21 +59,41 @@
       </geometry>
     </visual>
 
+  </link>
+
+  <link name="front_caster">
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia 
+	  ixx="1e-6" ixy="0" ixz="0"
+	  iyy="1e-6" iyz="0"
+	  izz="1e-6"/>
+    </inertial>
+
     <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.0999"/>
       </geometry>
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.1"/>
       </geometry>
     </visual>
-
   </link>
+
+  <joint type="fixed" name="front_caster_joint">
+    <origin xyz="0.15 0 -0.1" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="front_caster"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>
+
 
   <link name='left_wheel'>
     <inertial>
