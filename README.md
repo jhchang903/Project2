@@ -1,5 +1,5 @@
 # Project2
-Design a robot chasing a white ball and simulate in ROS.
+Design a robot that chases a white ball and simulate in ROS.
 
 
 ## Clone directory
