@@ -37,3 +37,6 @@ cd catkin_ws
 source devel/setup.bash
 roslaunch ball_chaser ball_chaser.launch
 ```
+
+##  Simulation in ROS
+<img src="https://github.com/jhchang903/Project2/blob/master/ros.gif" width="700">
